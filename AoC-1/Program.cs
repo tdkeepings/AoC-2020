@@ -231,8 +231,6 @@ namespace AdventOfCode
                     }
                 }
             }
-            
-            Console.WriteLine("Hello World!");
         }
     }
 }

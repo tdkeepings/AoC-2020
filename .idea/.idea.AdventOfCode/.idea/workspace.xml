@@ -26,6 +26,7 @@
         <option value="$PROJECT_DIR$/Two-Passwords/Program.cs" />
         <option value="$PROJECT_DIR$/AoC-3/input.txt" />
         <option value="$PROJECT_DIR$/AoC-3/Program.cs" />
+        <option value="$PROJECT_DIR$/AoC-1/Program.cs" />
       </list>
     </option>
   </component>
@@ -112,22 +113,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="440" height="464" key="DebuggerActiveHint/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607000168588" />
-    <state width="1373" height="331" key="GridCell.Tab.0.bottom" timestamp="1607000282325">
+    <state width="1373" height="331" key="GridCell.Tab.0.bottom" timestamp="1607001835419">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1373" height="331" key="GridCell.Tab.0.bottom/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607000282325" />
-    <state width="1373" height="331" key="GridCell.Tab.0.center" timestamp="1607000282325">
+    <state width="1373" height="331" key="GridCell.Tab.0.bottom/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607001835419" />
+    <state width="1373" height="331" key="GridCell.Tab.0.center" timestamp="1607001835419">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1373" height="331" key="GridCell.Tab.0.center/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607000282325" />
-    <state width="1373" height="331" key="GridCell.Tab.0.left" timestamp="1607000282325">
+    <state width="1373" height="331" key="GridCell.Tab.0.center/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607001835419" />
+    <state width="1373" height="331" key="GridCell.Tab.0.left" timestamp="1607001835419">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1373" height="331" key="GridCell.Tab.0.left/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607000282325" />
-    <state width="1373" height="331" key="GridCell.Tab.0.right" timestamp="1607000282325">
+    <state width="1373" height="331" key="GridCell.Tab.0.left/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607001835419" />
+    <state width="1373" height="331" key="GridCell.Tab.0.right" timestamp="1607001835419">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1373" height="331" key="GridCell.Tab.0.right/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607000282325" />
+    <state width="1373" height="331" key="GridCell.Tab.0.right/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607001835419" />
     <state width="1373" height="435" key="GridCell.Tab.1.bottom" timestamp="1607000177687">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -202,23 +203,6 @@
     <state x="967" y="428" key="search.everywhere.popup/-1080.-252.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1606833574833" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/AoC-3/Program.cs</url>
-          <line>36</line>
-          <properties documentPath="C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\Program.cs" initialLine="43">
-            <startOffsets>
-              <option value="1066" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1089" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
         <watch expression="map2d[0,0]" language="C#" />

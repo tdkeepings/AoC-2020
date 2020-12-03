@@ -10,14 +10,13 @@ namespace AoC_3
         {
             var lines = File.ReadAllLines("input.txt");
             var numOfLines = lines.Count();
-            var lineLength = lines[0].Length;
-            var map2d = new char[numOfLines, lineLength]; // give space to copy paste loads of blocks in
+            var lineLength = lines[0].Length; // assume all the same length
+            var map2d = new char[numOfLines, lineLength];
 
             // Populate 2d array
             for (var i = 0; i < numOfLines; i++)
             {
-                var thisline = lines[i];
-                var thislinearray = thisline.ToCharArray();
+                var thislinearray = lines[i].ToCharArray();
 
                 for (var j = 0; j < lineLength; j++)
                 {
