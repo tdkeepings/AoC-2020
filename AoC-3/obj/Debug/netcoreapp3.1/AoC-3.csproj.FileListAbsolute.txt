@@ -1,0 +1,14 @@
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\bin\Debug\netcoreapp3.1\AoC-3.exe
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\bin\Debug\netcoreapp3.1\input.txt
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\bin\Debug\netcoreapp3.1\AoC-3.deps.json
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\bin\Debug\netcoreapp3.1\AoC-3.runtimeconfig.json
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\bin\Debug\netcoreapp3.1\AoC-3.runtimeconfig.dev.json
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\bin\Debug\netcoreapp3.1\AoC-3.dll
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\bin\Debug\netcoreapp3.1\AoC-3.pdb
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\obj\Debug\netcoreapp3.1\AoC-3.csprojAssemblyReference.cache
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\obj\Debug\netcoreapp3.1\AoC-3.AssemblyInfoInputs.cache
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\obj\Debug\netcoreapp3.1\AoC-3.AssemblyInfo.cs
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\obj\Debug\netcoreapp3.1\AoC-3.csproj.CoreCompileInputs.cache
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\obj\Debug\netcoreapp3.1\AoC-3.dll
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\obj\Debug\netcoreapp3.1\AoC-3.pdb
+C:\Users\Work\RiderProjects\AdventOfCode\AoC-3\obj\Debug\netcoreapp3.1\AoC-3.genruntimeconfig.cache
