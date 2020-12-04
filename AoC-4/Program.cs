@@ -14,17 +14,8 @@ namespace AoC_4
 
             var passportBlocks = GetPassportBlocks(lines);
 
-            var valid = passportBlocks.Where(p => p.IsValid());
-            var invalid = passportBlocks.Where(p => !p.IsValid());
-
-
-            var a = "";
-            
             Console.WriteLine(passportBlocks.Count(p => p.IsValid()));
-            
-            
         }
-
 
         private static List<Passport> GetPassportBlocks(string[] lines)
         {
