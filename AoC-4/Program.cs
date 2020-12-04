@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace AoC_4
 {
@@ -13,7 +14,15 @@ namespace AoC_4
 
             var passportBlocks = GetPassportBlocks(lines);
 
+            var valid = passportBlocks.Where(p => p.IsValid());
+            var invalid = passportBlocks.Where(p => !p.IsValid());
+
+
+            var a = "";
+            
             Console.WriteLine(passportBlocks.Count(p => p.IsValid()));
+            
+            
         }
 
 
@@ -40,8 +49,6 @@ namespace AoC_4
                     }
                 }
             }
-            
-            passports.Add(passport); 
 
             return passports;
         }
@@ -50,26 +57,82 @@ namespace AoC_4
         {
             public string Ecl { get; set; }
             public string Pid { get; set; }
-            public string Eyr { get; set; }
+            public int Eyr { get; set; }
             public string Hcl { get; set; }
-            public string Byr { get; set; }
-            public string Iyr { get; set; }
+            public int Byr { get; set; }
+            public int Iyr { get; set; }
             public string Cid { get; set; }
-            public string Hgt { get; set; }
+            public Measurement Hgt { get; set; }
 
             public bool IsValid()
             {
                 return
-                    !string.IsNullOrEmpty(Ecl) &&
-                    !string.IsNullOrEmpty(Pid) &&
-                    !string.IsNullOrEmpty(Eyr) &&
-                    !string.IsNullOrEmpty(Hcl) &&
-                    !string.IsNullOrEmpty(Byr) &&
-                    !string.IsNullOrEmpty(Iyr) &&
-                    //!string.IsNullOrEmpty(Cid) &&
-                    !string.IsNullOrEmpty(Hgt);
+                    EclIsValid() &&
+                    PidIsValid() &&
+                    HclIsValid() && 
+                    ByrIsValid() &&
+                    IyrIsValid() &&
+                    EyrIsValid() &&
+                    HgtIsValid();
             }
 
+            private bool ByrIsValid()
+            {
+                return (Byr >= 1920 && Byr <= 2002);
+            }
+
+            private bool IyrIsValid()
+            {
+                return (Iyr >= 2010 && Iyr <= 2020);
+            }
+
+            private bool EyrIsValid()
+            {
+                return (Eyr >= 2020 && Eyr <= 2030);
+            }
+
+            private bool HgtIsValid()
+            {
+                if (Hgt == null) return false;
+                
+                if (Hgt.Unit.ToLower() == "cm")
+                {
+                    return (Hgt.Size >= 150 && Hgt.Size <= 193);
+                }
+
+                if (Hgt.Unit.ToLower() == "in")
+                {
+                    return (Hgt.Size >= 59 && Hgt.Size <= 76);
+                }
+
+                return false;
+            }
+
+            private bool HclIsValid()
+            {
+                if (string.IsNullOrEmpty(Hcl)) return false;
+                return Regex.Match(Hcl, @"^#(?:[0-9a-fA-F]{3}){1,2}$").Success;   
+            }
+
+            private bool EclIsValid()
+            {
+                if (string.IsNullOrEmpty(Ecl)) return false;
+                return
+                    Ecl == "amb" ||
+                    Ecl == "blu" ||
+                    Ecl == "brn" ||
+                    Ecl == "gry" ||
+                    Ecl == "grn" ||
+                    Ecl == "hzl" ||
+                    Ecl == "oth";
+            }
+
+            private bool PidIsValid()
+            {
+                if (string.IsNullOrEmpty(Pid)) return false;
+                return Pid.Length == 9 && Regex.Match(Pid, @"[0-9]{9}").Success;
+            }
+            
             public void AssignValue(string key, string value)
             {
                 switch (key.ToLower())
@@ -78,20 +141,38 @@ namespace AoC_4
                         break;
                     case "pid": Pid = value;
                         break;
-                    case "eyr": Eyr = value;
+                    case "eyr": Eyr = Convert.ToInt32(value);
                         break;
                     case "hcl": Hcl = value;
                         break;
-                    case "byr": Byr = value;
+                    case "byr": Byr = Convert.ToInt32(value);
                         break;
-                    case "iyr": Iyr = value;
+                    case "iyr": Iyr = Convert.ToInt32(value);
                         break;
                     case "cid": Cid = value;
                         break;
-                    case "hgt": Hgt = value;
+                    case "hgt": Hgt = ConvertHeight(value);
                         break;
                 }
             }
+
+            private Measurement ConvertHeight(string input)
+            {
+                var size = Convert.ToInt32(Regex.Match(input, @"\d+").Value);
+                var unit = input.Substring(input.Length-2, 2);
+
+                return new Measurement
+                {
+                    Size = size,
+                    Unit = unit
+                };
+            }
+        }
+
+        public class Measurement
+        {
+            public int Size { get; set; }
+            public string Unit { get; set; }
         }
     }
 }
