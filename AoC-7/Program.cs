@@ -26,7 +26,15 @@ namespace AoC_7
                     baseColours.Add(new Bag(){ Colour = bagColour});
                 }
             }
+            
+            // baseColours now has a list of Bags that have all the top level colours
+            
+            // now need to iterate again to fill up each Bag with the correct contents, using existing Bag refs as
+            // the content for the bags 
 
+            // Step through it all again but this time add bags to the list using references saved from above
+            // Might be able to do this in one loop, but making the assumption that the contents of 
+            // the input file is NOT in order. If it is in order, can do this in one loop
             foreach (var line in lines)
             {
                 var components = line.Split("contain");
@@ -38,8 +46,6 @@ namespace AoC_7
                 var baseBag = baseColours.First(b => b.Colour == bagColour);
                 if (contentColours.Trim() == "no other bags.")
                 {
-                    // end of the line for that bag, still needs adding though
-                   
                     listOfBags.Add(baseBag);
                     continue;
                 }
@@ -68,19 +74,20 @@ namespace AoC_7
                 
             }
             
-            // Tree is fully populate with nodes that reference bags properly 
+            // By here the list is fully populate with nodes that reference bags properly 
+            
             var numberOfBagsContainingAtLeastOne = 0;
             foreach (var bag in listOfBags)
             {
-                // each node with contain lots of bags, each with their own content, 
+                // Solution for Part 2
                 if (bag.Colour == "shiny gold")
                 {
                     var amountInThisBag = CountBags(bag.Contents);
                     Console.WriteLine("Shiny gold:" + amountInThisBag);
                 }
+                // Solution for Part 1
                 else
                 {
-
                     var amountInThisBag = CountContent("shiny gold", bag.Contents);
                     if (amountInThisBag > 0)
                         numberOfBagsContainingAtLeastOne++;
@@ -88,9 +95,9 @@ namespace AoC_7
             }
             
             Console.WriteLine(numberOfBagsContainingAtLeastOne);
-            
         }
 
+        // Recursively dig through the content of each bag
         private static int CountContent(string bagColour, List<BagContent> contents)
         {
 
@@ -112,6 +119,7 @@ namespace AoC_7
             return total;
         }
 
+        // Recursively count the number of bags inside a given set of content
         private static int CountBags(List<BagContent> contents)
         {
             var total = 0;
