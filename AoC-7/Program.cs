@@ -75,7 +75,8 @@ namespace AoC_7
                 // each node with contain lots of bags, each with their own content, 
                 if (bag.Colour == "shiny gold")
                 {
-                    // skip? 
+                    var amountInThisBag = CountBags(bag.Contents);
+                    Console.WriteLine("Shiny gold:" + amountInThisBag);
                 }
                 else
                 {
@@ -83,12 +84,8 @@ namespace AoC_7
                     var amountInThisBag = CountContent("shiny gold", bag.Contents);
                     if (amountInThisBag > 0)
                         numberOfBagsContainingAtLeastOne++;
-                    
-                    //Console.WriteLine(amountInThisBag);
                 }
-
             }
-            
             
             Console.WriteLine(numberOfBagsContainingAtLeastOne);
             
@@ -113,7 +110,20 @@ namespace AoC_7
             }
 
             return total;
-        } 
+        }
+
+        private static int CountBags(List<BagContent> contents)
+        {
+            var total = 0;
+            foreach (var content in contents)
+            {
+                var bag = content.Bag;
+                total += content.Quantity + (content.Quantity * CountBags(bag.Contents));
+                // Quantity + (Quantity * Content)
+            }
+
+            return total;
+        }
         
         
         public class Bag
